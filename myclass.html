@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rokib Hasan</title>
+    <link rel="shortcut icon" href="sohelsir.png" type="image/x-icon">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, brown, gold, red);
+            color: #fff;
+            text-transform: capitalize;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            margin-bottom: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .header img {
+            height: 220px;
+            width: 220px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            border: 5px solid #ffcc00;
+        }
+
+        .header img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
+        }
+
+        .header h4 {
+            font-size: 34px;
+            color: #f1f1f1;
+            font-weight: 600;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .header p {
+            color: #ffcc00;
+            font-size: 20px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        
+
+        /* Menu Button */
+        .header button {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 22px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 65, 108, 0.4);
+        }
+
+        .header button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 65, 108, 0.6);
+        }
+
+        /* Overlay Navigation */
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.95);
+            overflow-x: hidden;
+            transition: 0.5s;
+        }
+
+        .overlay-content {
+            position: relative;
+            top: 25%;
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .overlay a {
+            padding: 20px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #ffcc00;
+            display: block;
+            border: 2px solid #ffcc00;
+            margin: 15px 0;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            font-weight: 500;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .overlay a:hover {
+            background: #ffcc00;
+            color: #000;
+            
+        }
+
+        /* Close Button */
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 60px;
+            color: #fff;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+
+        /* Image Slider */
+        #slider {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            margin-top: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #slider:hover {
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        /* Responsive Design */
+        @media only screen and (max-width: 768px) {
+            .header img {
+                height: 180px;
+                width: 180px;
+            }
+
+            .header h4 {
+                font-size: 28px;
+            }
+
+            .header p {
+                font-size: 18px;
+            }
+
+            .header button {
+                font-size: 20px;
+                padding: 10px 20px;
+            }
+
+            .overlay-content {
+                width: 90%;
+            }
+
+            .overlay a {
+                font-size: 18px;
+                padding: 15px;
+            }
+
+            .overlay .closebtn {
+                font-size: 45px;
+            }
+
+            #slider {
+                height: 350px;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            .header img {
+                height: 150px;
+                width: 150px;
+            }
+
+            .header h4 {
+                font-size: 24px;
+            }
+
+            .header p {
+                font-size: 16px;
+            }
+
+            .header button {
+                font-size: 18px;
+                padding: 8px 15px;
+            }
+
+            .overlay a {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .overlay .closebtn {
+                font-size: 35px;
+            }
+
+            #slider {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="rokib.jpg" alt="Profile Picture">
+        <h4>Rokib Hasan</h4>
+        <p>DU <br> BCC <br> IsDB BISEW</p>
+       
+    </header>
+
+    <!-- Menu Button -->
+    <div class="header">
+        <button onclick="openNav()">Learn</button>
+    </div>
+
+    <!-- Overlay Navigation -->
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <h3>IT (Only)</h3>
+<a href="folder1/index.html" target="_blank">Computer</a><br>
+<a href="folder2/index.html" target="_blank">Windows</a><br>
+<a href="folder3/index.html" target="_blank">Browser</a><br>
+<a href="folder4/index.html" target="_blank">MS Office</a><br>
+<a href="folder5/index.html" target="_blank">Notepad</a><br>
+<a href="folder6/index.html" target="_blank">VS Code</a><br>
+<a href="folder7/index.html" target="_blank">Canva</a><br>
+<a href="folder8/index.html" target="_blank">App & Software (Important)</a><br>
+<a href="folder9/index.html" target="_blank">Extension (Google)</a><br>
+<a href="folder10/index.html" target="_blank">Git</a><br>
+<a href="folder11/index.html" target="_blank">GitHub</a><br>
+<a href="folder12/index.html" target="_blank">Google Setting</a><br>
+<a href="folder13/index.html" target="_blank">Gmail</a><br>
+<a href="folder14/index.html" target="_blank">YouTube</a><br>
+<a href="folder15/index.html" target="_blank">Hosting</a><br>
+<a href="folder16/index.html" target="_blank">Meta Profile</a><br>
+<a href="folder17/index.html" target="_blank">Facebook Page</a><br>
+<a href="folder18/index.html" target="_blank">Facebook Group</a><br>
+<a href="folder19/index.html" target="_blank">Digital Marketing</a><br>
+<a href="folder20/index.html" target="_blank">Paint Software</a><br>
+<a href="folder21/index.html" target="_blank">HTML</a><br>
+<a href="folder22/index.html" target="_blank">CSS</a><br>
+<a href="folder23/index.html" target="_blank">Bootstrap</a><br>
+<a href="folder24/index.html" target="_blank">Tailwind</a><br>
+<a href="folder25/index.html" target="_blank">JavaScript</a><br>
+<a href="folder26/index.html" target="_blank">React JS / Vue JS / Angular JS</a><br>
+<a href="folder27/index.html" target="_blank">Mongo DB</a><br>
+<a href="folder28/index.html" target="_blank">Express JS</a><br>
+<a href="folder29/index.html" target="_blank">Domain</a><br>
+<a href="folder30/index.html" target="_blank">Hosting</a><br>
+<a href="folder31/index.html" target="_blank">Website Tools</a><br>
+<a href="folder32/index.html" target="_blank">Google Drive</a><br>
+<a href="folder33/index.html" target="_blank">Video Editing</a><br>
+<a href="folder34/index.html" target="_blank">Font Awesome</a><br>
+<a href="folder35/index.html" target="_blank">Google Fonts</a><br>
+<a href="folder36/index.html" target="_blank">Figma</a><br>
+<a href="folder37/index.html" target="_blank">Specific website Specific Features</a><br>
+<a href="folder38/index.html" target="_blank">WhatsApp</a><br>
+<a href="folder39/index.html" target="_blank">Chapter 1 (HSC)</a><br>
+<a href="folder40/index.html" target="_blank">Chapter 2 (HSC)</a><br>
+<a href="folder41/index.html" target="_blank">Chapter 3 (HSC)</a><br>
+<a href="folder42/index.html" target="_blank">Chapter 4 (HSC)</a><br>
+<a href="folder43/index.html" target="_blank">Chapter 5 (HSC)</a><br>
+<a href="folder44/index.html" target="_blank">Chapter 6 (HSC)</a><br>
+<a href="folder45/index.html" target="_blank">Day-45</a><br>
+<a href="folder46/index.html" target="_blank">Day-46</a><br>
+<a href="folder47/index.html" target="_blank">Day-47</a><br>
+<a href="folder48/index.html" target="_blank">Day-48</a><br>
+<a href="folder49/index.html" target="_blank">Day-49</a><br>
+<a href="folder50/index.html" target="_blank">Day-50</a><br>
+<a href="folder51/index.html" target="_blank">Day-51</a><br>
+<a href="folder52/index.html" target="_blank">Day-52</a><br>
+<a href="folder53/index.html" target="_blank">Day-53</a><br>
+<a href="folder54/index.html" target="_blank">Day-54</a><br>
+<a href="folder55/index.html" target="_blank">Day-55</a><br>
+<a href="folder56/index.html" target="_blank">Day-56</a><br>
+<a href="folder57/index.html" target="_blank">Day-57</a><br>
+<a href="folder58/index.html" target="_blank">Day-58</a><br>
+<a href="folder59/index.html" target="_blank">Day-59</a><br>
+<a href="folder60/index.html" target="_blank">Day-60</a><br>
+<a href="folder61/index.html" target="_blank">Day-61</a><br>
+<a href="folder62/index.html" target="_blank">Day-62</a><br>
+<a href="folder63/index.html" target="_blank">Day-63</a><br>
+<a href="folder64/index.html" target="_blank">Day-64</a><br>
+<a href="folder65/index.html" target="_blank">Day-65</a><br>
+<a href="folder66/index.html" target="_blank">Day-66</a><br>
+<a href="folder67/index.html" target="_blank">Day-67</a><br>
+<a href="folder68/index.html" target="_blank">Day-68</a><br>
+<a href="folder69/index.html" target="_blank">Day-69</a><br>
+<a href="folder70/index.html" target="_blank">Day-70</a><br>
+<a href="folder71/index.html" target="_blank">Day-71</a><br>
+<a href="folder72/index.html" target="_blank">Day-72</a><br>
+<a href="folder73/index.html" target="_blank">Day-73</a><br>
+<a href="folder74/index.html" target="_blank">Day-74</a><br>
+<a href="folder75/index.html" target="_blank">Day-75</a><br>
+<a href="folder76/index.html" target="_blank">Day-76</a><br>
+<a href="folder77/index.html" target="_blank">Day-77</a><br>
+<a href="folder78/index.html" target="_blank">Day-78</a><br>
+<a href="folder79/index.html" target="_blank">Day-79</a><br>
+<a href="folder80/index.html" target="_blank">Day-80</a><br>
+<a href="folder81/index.html" target="_blank">Day-81</a><br>
+<a href="folder82/index.html" target="_blank">Day-82</a><br>
+<a href="folder83/index.html" target="_blank">Day-83</a><br>
+<a href="folder84/index.html" target="_blank">Day-84</a><br>
+<a href="folder85/index.html" target="_blank">Day-85</a><br>
+<a href="folder86/index.html" target="_blank">Day-86</a><br>
+<a href="folder87/index.html" target="_blank">Day-87</a><br>
+<a href="folder88/index.html" target="_blank">Day-88</a><br>
+<a href="folder89/index.html" target="_blank">Day-89</a><br>
+<a href="folder90/index.html" target="_blank">Day-90</a><br>
+<a href="folder91/index.html" target="_blank">Day-91</a><br>
+<a href="folder92/index.html" target="_blank">Day-92</a><br>
+<a href="folder93/index.html" target="_blank">Day-93</a><br>
+<a href="folder94/index.html" target="_blank">Day-94</a><br>
+<a href="folder95/index.html" target="_blank">Day-95</a><br>
+<a href="folder96/index.html" target="_blank">Day-96</a><br>
+<a href="folder97/index.html" target="_blank">Day-97</a><br>
+<a href="folder98/index.html" target="_blank">Day-98</a><br>
+<a href="folder99/index.html" target="_blank">Day-99</a><br>
+<a href="folder100/index.html" target="_blank">Day-100</a><br>
+<a href="folder101/index.html" target="_blank">Day-101</a><br>
+<a href="folder102/index.html" target="_blank">Day-102</a><br>
+<a href="folder103/index.html" target="_blank">Day-103</a><br>
+<a href="folder104/index.html" target="_blank">Day-104</a><br>
+<a href="folder105/index.html" target="_blank">Day-105</a><br>
+<a href="folder106/index.html" target="_blank">Day-106</a><br>
+<a href="folder107/index.html" target="_blank">Day-107</a><br>
+<a href="folder108/index.html" target="_blank">Day-108</a><br>
+<a href="folder109/index.html" target="_blank">Day-109</a><br>
+<a href="folder110/index.html" target="_blank">Day-110</a><br>
+<a href="folder111/index.html" target="_blank">Day-111</a><br>
+<a href="folder112/index.html" target="_blank">Day-112</a><br>
+<a href="folder113/index.html" target="_blank">Day-113</a><br>
+<a href="folder114/index.html" target="_blank">Day-114</a><br>
+<a href="folder115/index.html" target="_blank">Day-115</a><br>
+<a href="folder116/index.html" target="_blank">Day-116</a><br>
+<a href="folder117/index.html" target="_blank">Day-117</a><br>
+<a href="folder118/index.html" target="_blank">Day-118</a><br>
+<a href="folder119/index.html" target="_blank">Day-119</a><br>
+<a href="folder120/index.html" target="_blank">Day-120</a><br>
+<h3>Academic (Mixed)</h3>
+<a href="folder121/index.html" target="_blank">Bangla Language Analysis</a><br>
+<a href="folder122/index.html" target="_blank">Bangla Pronoun</a><br>
+<a href="folder123/index.html" target="_blank">Bangla Adjectives</a><br>
+<a href="folder124/index.html" target="_blank">Bangla Adverb</a><br>
+<a href="folder125/index.html" target="_blank">Bangla Verb</a><br>
+<a href="folder126/index.html" target="_blank">Bangla Noun</a><br>
+<a href="folder127/index.html" target="_blank">Bangla Conjunction</a><br>
+<a href="folder128/index.html" target="_blank">Bangla Interjection</a><br>
+<a href="folder129/index.html" target="_blank">Bangla Preposition</a><br>
+<a href="folder130/index.html" target="_blank">Confused Words</a><br>
+<a href="folder131/index.html" target="_blank">English Noun</a><br>
+<a href="folder132/index.html" target="_blank">English Pronoun</a><br>
+<a href="folder133/index.html" target="_blank">English Adjective</a><br>
+<a href="folder134/index.html" target="_blank">English Adverb</a><br>
+<a href="folder135/index.html" target="_blank">English Verb</a><br>
+<a href="folder136/index.html" target="_blank">English Preposition</a><br>
+<a href="folder137/index.html" target="_blank">English Conjunction</a><br>
+<a href="folder138/index.html" target="_blank">English Interjection</a><br>
+<a href="folder139/index.html" target="_blank">Colors (রঙ)</a><br>
+<a href="folder140/index.html" target="_blank">Fruits (ফল)</a><br>
+<a href="folder141/index.html" target="_blank">Vegetables (সবজি)</a><br>
+<a href="folder142/index.html" target="_blank">Human Inner Organs (মানুষের অভ্যন্তরীণ অঙ্গ)</a><br>
+<a href="folder143/index.html" target="_blank">Human Outer Organs (মানুষের বাইরের অঙ্গ)</a><br>
+<a href="folder144/index.html" target="_blank">Politics (রাজনীতি)</a><br>
+<a href="folder145/index.html" target="_blank">Education (শিক্ষা)</a><br>
+<a href="folder146/index.html" target="_blank">Family (পারিবারিক সম্পর্ক)</a><br>
+<a href="folder147/index.html" target="_blank">Currency (মুদ্রা)</a><br>
+<a href="folder148/index.html" target="_blank">Filmmaking (চলচ্চিত্র নির্মাণ)</a><br>
+<a href="folder149/index.html" target="_blank">Islam (ইসলাম)</a><br>
+<a href="folder150/index.html" target="_blank">Bedroom (বেডরুম)</a><br>
+<a href="folder151/index.html" target="_blank">Kitchen (রান্নাঘর)</a><br>
+<a href="folder152/index.html" target="_blank">Toilet (টয়লেট)</a><br>
+<a href="folder153/index.html" target="_blank">Hobbies (শখ)</a><br>
+<a href="folder154/index.html" target="_blank">Sports (খেলাধুলা)</a><br>
+<a href="folder155/index.html" target="_blank">Football (ফুটবল)</a><br>
+<a href="folder156/index.html" target="_blank">Cricket</a><br>
+<a href="folder157/index.html" target="_blank">Bangladesh (বাংলাদেশ)</a><br>
+<a href="folder158/index.html" target="_blank">Devices</a><br>
+<a href="folder159/index.html" target="_blank">Fish (মাছ)</a><br>
+<a href="folder160/index.html" target="_blank">Insects (পোকামাকড়)</a><br>
+<a href="folder161/index.html" target="_blank">Online Services (অনলাইন পরিষেবা)</a><br>
+<a href="folder162/index.html" target="_blank">Fashion Industry (ফ্যাশন শিল্প)</a><br>
+<a href="folder163/index.html" target="_blank">Health Problems (স্বাস্থ্য সমস্যা)</a><br>
+<a href="folder164/index.html" target="_blank">Festivals (উৎসব)</a><br>
+<a href="folder165/index.html" target="_blank">?</a><br>
+<a href="folder166/index.html" target="_blank">Communication (যোগাযোগ)</a><br>
+<a href="folder167/index.html" target="_blank">Birds (পাখি)</a><br>
+<a href="folder168/index.html" target="_blank">Animals (প্রাণী)</a><br>
+<a href="folder169/index.html" target="_blank">Pets (পোষা প্রাণী)</a><br>
+<a href="folder170/index.html" target="_blank">Relationships (সম্পর্ক)</a><br>
+<a href="folder171/index.html" target="_blank">Emotions (অনুভূতি)</a><br>
+<a href="folder172/index.html" target="_blank">Psychology (মনোবিজ্ঞান)</a><br>
+<a href="folder173/index.html" target="_blank">Childhood (শৈশব)</a><br>
+<a href="folder174/index.html" target="_blank">Adulthood (প্রাপ্তবয়স্ক)</a><br>
+<a href="folder175/index.html" target="_blank">Old Age (বৃদ্ধাবস্থা)</a><br>
+<a href="folder176/index.html" target="_blank">Shopping Items (শপিং আইটেম)</a><br>
+<a href="folder177/index.html" target="_blank">Daily Activities (দৈনন্দিন কাজ)</a><br>
+<a href="folder178/index.html" target="_blank">?</a><br>
+<a href="folder179/index.html" target="_blank">Food Items (খাবারের আইটেম)</a><br>
+<a href="folder180/index.html" target="_blank">Weather Conditions (আবহাওয়া পরিস্থিতি)</a><br>
+<a href="folder181/index.html" target="_blank">Travel (ভ্রমণ)</a><br>
+<a href="folder182/index.html" target="_blank">Cultural Festivals (সাংস্কৃতিক উৎসব)</a><br>
+<a href="folder183/index.html" target="_blank">World Capitals (বিশ্বের রাজধানী)</a><br>
+<a href="folder184/index.html" target="_blank">Places of Worship (উপাসনাস্থল)</a><br>
+<a href="folder185/index.html" target="_blank">Countries (দেশ)</a><br>
+<a href="folder186/index.html" target="_blank">Project Management (প্রকল্প ব্যবস্থাপনা)</a><br>
+<a href="folder187/index.html" target="_blank">Customer Service (কাস্টমার সার্ভিস)</a><br>
+<a href="folder188/index.html" target="_blank">Advertising (বিজ্ঞাপন)</a><br>
+<a href="folder189/index.html" target="_blank">Journalism (সাংবাদিকতা)</a><br>
+<a href="folder190/index.html" target="_blank">Copywriting (কপি রাইটিং)</a><br>
+<a href="folder191/index.html" target="_blank">Writing (লেখা)</a><br>
+<a href="folder192/index.html" target="_blank">Public Speaking (পাবলিক স্পিকিং)</a><br>
+<a href="folder193/index.html" target="_blank">E-commerce (ই-কমার্স)</a><br>
+<a href="folder194/index.html" target="_blank">Blogging (ব্লগিং)</a><br>
+<a href="folder195/index.html" target="_blank">Podcasting (পডকাস্টিং)</a><br>
+<a href="folder196/index.html" target="_blank">Web Development (ওয়েব ডেভেলপমেন্ট)</a><br>
+<a href="folder197/index.html" target="_blank">App Development (অ্যাপ ডেভেলপমেন্ট)</a><br>
+<a href="folder198/index.html" target="_blank">?</a><br>
+<a href="folder199/index.html" target="_blank">Coding (কোডিং)</a><br>
+<a href="folder200/index.html" target="_blank">Cyber Security (সাইবার নিরাপত্তা)</a><br>
+<a href="folder201/index.html" target="_blank">Data Science (ডেটা বিজ্ঞান)</a><br>
+<a href="folder202/index.html" target="_blank">Search Engine Optimization (এসইও)</a><br>
+<a href="folder203/index.html" target="_blank">Machine Learning (মেশিন লার্নিং)</a><br>
+<a href="folder204/index.html" target="_blank">Artificial Intelligence (কৃত্রিম বুদ্ধিমত্তা)</a><br>
+<a href="folder205/index.html" target="_blank">Quantum Physics (কোয়ান্টাম পদার্থবিজ্ঞান)</a><br>
+<a href="folder206/index.html" target="_blank">Technology Advancements (প্রযুক্তির অগ্রগতি)</a><br>
+<a href="folder207/index.html" target="_blank">Geography (ভূগোল)</a><br>
+<a href="folder208/index.html" target="_blank">Mathematics (গণিত)</a><br>
+<a href="folder209/index.html" target="_blank">Biology (জীববিদ্যা)</a><br>
+<a href="folder210/index.html" target="_blank">Chemistry (রসায়ন)</a><br>
+<a href="folder211/index.html" target="_blank">Physics (পদার্থবিজ্ঞান)</a><br>
+<a href="folder212/index.html" target="_blank">Chemical Reactions (রাসায়নিক প্রতিক্রিয়া)</a><br>
+<a href="folder213/index.html" target="_blank">Science Experiments (বিজ্ঞান পরীক্ষণ)</a><br>
+<a href="folder214/index.html" target="_blank">Research (গবেষণা)</a><br>
+<a href="folder215/index.html" target="_blank">Internship (ইন্টার্নশিপ)</a><br>
+<a href="folder216/index.html" target="_blank">Graduation (স্নাতক)</a><br>
+<a href="folder217/index.html" target="_blank">Student Loans (ছাত্র ঋণ)</a><br>
+<a href="folder218/index.html" target="_blank">Scholarships (স্কলারশিপ)</a><br>
+<a href="folder219/index.html" target="_blank">Campus Life (ক্যাম্পাস জীবন)</a><br>
+<a href="folder220/index.html" target="_blank">University (বিশ্ববিদ্যালয়)</a><br>
+<a href="folder221/index.html" target="_blank">College (কলেজ)</a><br>
+<a href="folder222/index.html" target="_blank">School Subjects (স্কুলের বিষয়)</a><br>
+<a href="folder223/index.html" target="_blank">Exams (পরীক্ষা)</a><br>
+<a href="folder224/index.html" target="_blank">Study Materials (অধিগম্য উপকরণ)</a><br>
+<a href="folder225/index.html" target="_blank">Tutors (টিউটর)</a><br>
+<a href="folder226/index.html" target="_blank">Online Classes (অনলাইন ক্লাস)</a><br>
+<a href="folder227/index.html" target="_blank">Distance Learning (দূরশিক্ষা)</a><br>
+<a href="folder228/index.html" target="_blank">Education Technology (শিক্ষা প্রযুক্তি)</a><br>
+<a href="folder229/index.html" target="_blank">Pregnancy (গর্ভাবস্থা)</a><br>
+<a href="folder230/index.html" target="_blank">Childcare (শিশুদের পরিচর্যা)</a><br>
+<a href="folder231/index.html" target="_blank">Parenthood (পিতৃত্ব-মাতৃত্ব)</a><br>
+<a href="folder232/index.html" target="_blank">Family Planning (পারিবারিক পরিকল্পনা)</a><br>
+<a href="folder233/index.html" target="_blank">Marriage (বিবাহ)</a><br>
+<a href="folder234/index.html" target="_blank">Divorce (বিচ্ছেদ)</a><br>
+<a href="folder235/index.html" target="_blank">Stress Management (মানসিক চাপ পরিচালনা)</a><br>
+<a href="folder236/index.html" target="_blank">Physical Therapy (শারীরিক থেরাপি)</a><br>
+<a href="folder237/index.html" target="_blank">Occupations (পেশা)</a><br>
+<a href="folder238/index.html" target="_blank">Weather (আবহাওয়া)</a><br>
+<a href="folder239/index.html" target="_blank">Transportation (পরিবহন)</a><br>
+<a href="folder240/index.html" target="_blank">Health (স্বাস্থ্য)</a><br>
+<a href="folder241/index.html" target="_blank">Music (সঙ্গীত)</a><br>
+<a href="folder242/index.html" target="_blank">Movies (চলচ্চিত্র)</a><br>
+<a href="folder243/index.html" target="_blank">Literature (সাহিত্য)</a><br>
+<a href="folder244/index.html" target="_blank">Technology (প্রযুক্তি)</a><br>
+<a href="folder245/index.html" target="_blank">Art (শিল্প)</a><br>
+<a href="folder246/index.html" target="_blank">Science (বিজ্ঞান)</a><br>
+<a href="folder247/index.html" target="_blank">Economy (অর্থনীতি)</a><br>
+<a href="folder248/index.html" target="_blank">Government (সরকার)</a><br>
+<a href="folder249/index.html" target="_blank">Religion (ধর্ম)</a><br>
+<a href="folder250/index.html" target="_blank">Languages (ভাষা)</a><br>
+<a href="folder251/index.html" target="_blank">Law (আইন)</a><br>
+<a href="folder252/index.html" target="_blank">Agriculture (কৃষি)</a><br>
+<a href="folder253/index.html" target="_blank">Environment (পরিবেশ)</a><br>
+<a href="folder254/index.html" target="_blank">Holidays (ছুটির দিন)</a><br>
+<a href="folder255/index.html" target="_blank">Shopping (শপিং)</a><br>
+<a href="folder256/index.html" target="_blank">Nature (প্রকৃতি)</a><br>
+<a href="folder257/index.html" target="_blank">?</a><br>
+<a href="folder258/index.html" target="_blank">History (ইতিহাস)</a><br>
+<a href="folder259/index.html" target="_blank">Social Media (সোশ্যাল মিডিয়া)</a><br>
+<a href="folder260/index.html" target="_blank">Architecture (স্থাপত্য)</a><br>
+<a href="folder261/index.html" target="_blank">Fashion (ফ্যাশন)</a><br>
+<a href="folder262/index.html" target="_blank">Books (বই)</a><br>
+<a href="folder263/index.html" target="_blank">Theatre (নাটক)</a><br>
+<a href="folder264/index.html" target="_blank">Movies Genres (চলচ্চিত্রের ধরনের)</a><br>
+<a href="folder265/index.html" target="_blank">Time (সময়)</a><br>
+<a href="folder266/index.html" target="_blank">Places (স্থান)</a><br>
+<a href="folder267/index.html" target="_blank">Beauty (সৌন্দর্য)</a><br>
+<a href="folder268/index.html" target="_blank">Music Instruments (সঙ্গীত যন্ত্র)</a><br>
+<a href="folder269/index.html" target="_blank">Shopping Malls (শপিং মল)</a><br>
+<a href="folder270/index.html" target="_blank">Educational Institutions (শিক্ষা প্রতিষ্ঠান)</a><br>
+<a href="folder271/index.html" target="_blank">Continents (মহাদেশ)</a><br>
+<a href="folder272/index.html" target="_blank">Languages of the World (বিশ্বের ভাষা)</a><br>
+<a href="folder273/index.html" target="_blank">Global Issues (গ্লোবাল ইস্যু)</a><br>
+<a href="folder274/index.html" target="_blank">Communication Tools (যোগাযোগের টুল)</a><br>
+<a href="folder275/index.html" target="_blank">Computer Programs (কম্পিউটার প্রোগ্রাম)</a><br>
+<a href="folder276/index.html" target="_blank">Digital Tools (ডিজিটাল টুল)</a><br>
+<a href="folder277/index.html" target="_blank">Future Technologies (ভবিষ্যতের প্রযুক্তি)</a><br>
+<a href="folder278/index.html" target="_blank">Social Issues (সামাজিক ইস্যু)</a><br>
+<a href="folder279/index.html" target="_blank">Safety (নিরাপত্তা)</a><br>
+<a href="folder280/index.html" target="_blank">Inventions (আবিষ্কার)</a><br>
+<a href="folder281/index.html" target="_blank">Discoveries (অনুসন্ধান)</a><br>
+<a href="folder282/index.html" target="_blank">Music Genres (সঙ্গীতের ধরণ)</a><br>
+<a href="folder283/index.html" target="_blank">Famous People (প্রখ্যাত ব্যক্তি)</a><br>
+<a href="folder284/index.html" target="_blank">Popular Cities (জনপ্রিয় শহর)</a><br>
+<a href="folder285/index.html" target="_blank">Fashion Accessories (ফ্যাশন অ্যাকসেসরি)</a><br>
+<a href="folder286/index.html" target="_blank">Human Rights (মানবাধিকার)</a><br>
+<a href="folder287/index.html" target="_blank">Pollution (দূষণ)</a><br>
+<a href="folder288/index.html" target="_blank">International Relations (আন্তর্জাতিক সম্পর্ক)</a><br>
+<a href="folder289/index.html" target="_blank">Diplomacy (কূটনীতি)</a><br>
+<a href="folder290/index.html" target="_blank">Investment (বিনিয়োগ)</a><br>
+<a href="folder291/index.html" target="_blank">Business (ব্যবসা)</a><br>
+<a href="folder292/index.html" target="_blank">Marketing (বিপণন)</a><br>
+<a href="folder293/index.html" target="_blank">Finance (অর্থ)</a><br>
+<a href="folder294/index.html" target="_blank">Taxes (কর)</a><br>
+<a href="folder295/index.html" target="_blank">?</a><br>
+<a href="folder296/index.html" target="_blank">Real Estate (রিয়েল এস্টেট)</a><br>
+<a href="folder297/index.html" target="_blank">Insurance (বীমা)</a><br>
+<a href="folder298/index.html" target="_blank">Debt (ঋণ)</a><br>
+<a href="folder299/index.html" target="_blank">Consumer Rights (ভোক্তা অধিকার)</a><br>
+<a href="folder300/index.html" target="_blank">Security Systems (নিরাপত্তা সিস্টেম)</a><br>
+<a href="folder301/index.html" target="_blank">Home Appliances (গৃহস্থালি যন্ত্রপাতি)</a><br>
+<a href="folder302/index.html" target="_blank">Building Materials (নির্মাণ সামগ্রী)</a><br>
+<a href="folder303/index.html" target="_blank">Gym (জিম)</a><br>
+<a href="folder304/index.html" target="_blank">Exercise (ব্যায়াম)</a><br>
+<a href="folder305/index.html" target="_blank">Diet (ডায়েট)</a><br>
+<a href="folder306/index.html" target="_blank">Medicine (ঔষধ)</a><br>
+<a href="folder307/index.html" target="_blank">Healthcare (স্বাস্থ্যসেবা)</a><br>
+<a href="folder308/index.html" target="_blank">Mental Health (মানসিক স্বাস্থ্য)</a><br>
+<a href="folder309/index.html" target="_blank">Yoga (যোগব্যায়াম)</a><br>
+<a href="folder310/index.html" target="_blank">Meditation (ধ্যান)</a><br>
+<a href="folder311/index.html" target="_blank">Diseases (রোগ)</a><br>
+<a href="folder312/index.html" target="_blank">Vaccines (টিকা)</a><br>
+<a href="folder313/index.html" target="_blank">Hospitals (হাসপাতাল)</a><br>
+<a href="folder314/index.html" target="_blank">Doctors (ডাক্তার)</a><br>
+<a href="folder315/index.html" target="_blank">Nurses (নার্স)</a><br>
+<a href="folder316/index.html" target="_blank">Patients (রোগী)</a><br>
+<a href="folder317/index.html" target="_blank"> Content Creation (কনটেন্ট ক্রিয়েশন)</a><br>
+<a href="folder318/index.html" target="_blank">Social Media Marketing (সোশ্যাল মিডিয়া মার্কেটিং)</a><br>
+<a href="folder319/index.html" target="_blank">Sex (সেক্স)</a><br>
+<a href="folder320/index.html" target="_blank">Earth (পৃথিবী)</a><br>
+<a href="folder321/index.html" target="_blank">Day-321</a><br>
+<a href="folder322/index.html" target="_blank">Day-322</a><br>
+<a href="folder323/index.html" target="_blank">Day-323</a><br>
+<a href="folder324/index.html" target="_blank">Day-324</a><br>
+<a href="folder325/index.html" target="_blank">Day-325</a><br>
+<a href="folder326/index.html" target="_blank">Day-326</a><br>
+<a href="folder327/index.html" target="_blank">Day-327</a><br>
+<a href="folder328/index.html" target="_blank">Day-328</a><br>
+<a href="folder329/index.html" target="_blank">Day-329</a><br>
+<a href="folder330/index.html" target="_blank">Day-330</a><br>
+<a href="folder331/index.html" target="_blank">Day-331</a><br>
+<a href="folder332/index.html" target="_blank">Day-332</a><br>
+<a href="folder333/index.html" target="_blank">Day-333</a><br>
+<a href="folder334/index.html" target="_blank">Day-334</a><br>
+<a href="folder335/index.html" target="_blank">Day-335</a><br>
+<a href="folder336/index.html" target="_blank">Day-336</a><br>
+<a href="folder337/index.html" target="_blank">Day-337</a><br>
+<a href="folder338/index.html" target="_blank">Day-338</a><br>
+<a href="folder339/index.html" target="_blank">Day-339</a><br>
+<a href="folder340/index.html" target="_blank">Day-340</a><br>
+<a href="folder341/index.html" target="_blank">Day-341</a><br>
+<a href="folder342/index.html" target="_blank">Day-342</a><br>
+<a href="folder343/index.html" target="_blank">Day-343</a><br>
+<a href="folder344/index.html" target="_blank">Day-344</a><br>
+<a href="folder345/index.html" target="_blank">Day-345</a><br>
+<a href="folder346/index.html" target="_blank">Day-346</a><br>
+<a href="folder347/index.html" target="_blank">Day-347</a><br>
+<a href="folder348/index.html" target="_blank">Day-348</a><br>
+<a href="folder349/index.html" target="_blank">Day-349</a><br>
+<a href="folder350/index.html" target="_blank">Day-350</a><br>
+<a href="folder351/index.html" target="_blank">Day-351</a><br>
+<a href="folder352/index.html" target="_blank">Day-352</a><br>
+<a href="folder353/index.html" target="_blank">Day-353</a><br>
+<a href="folder354/index.html" target="_blank">Day-354</a><br>
+<a href="folder355/index.html" target="_blank">Day-355</a><br>
+<a href="folder356/index.html" target="_blank">Day-356</a><br>
+<a href="folder357/index.html" target="_blank">Day-357</a><br>
+<a href="folder358/index.html" target="_blank">Day-358</a><br>
+<a href="folder359/index.html" target="_blank">Day-359</a><br>
+<a href="folder360/index.html" target="_blank">Day-360</a><br>
+<a href="folder361/index.html" target="_blank">Day-361</a><br>
+<a href="folder362/index.html" target="_blank">Day-362</a><br>
+<a href="folder363/index.html" target="_blank">Day-363</a><br>
+<a href="folder364/index.html" target="_blank">Day-364</a><br>
+<a href="folder365/index.html" target="_blank">Day-365</a><br>
+          
+            <h2 style="color: bisque;">Book 👇</h2>
+            <a href="" target="_blank">Daily-Life</a>
+        </div>
+    </div>
+
+    <!-- Image Slider -->
+    <!-- <img id="slider" name="slide" src="Images/codeone.jpg" alt="Image Slider"> -->
+
+    <!-- Image Slider Script -->
+    <script>
+        var i = 0;
+        var path = ["codeone.jpg", "code1.jpg", "code2.jpg", "code3.jpg", "code4.jpg", "code5.jpg", "code6.jpg"];
+
+        function swapImage() {
+            document.getElementById("slider").src = path[i];
+            i = (i < path.length - 1) ? i + 1 : 0;
+            setTimeout(swapImage, 3000);
+        }
+
+        window.onload = swapImage;
+
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+    <!-- Source Code Security -->
+    <script>
+        document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+      </script>
+      <!-- 😊😊😊 Keyboard-Shortcuts 😊😊😊 -->
+
+<script>
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'a' || e.key === 'f12')) {
+        e.preventDefault();
+      }
+    });
+  </script>
+
+
+</body>
+</html>
